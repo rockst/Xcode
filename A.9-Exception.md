@@ -7,7 +7,7 @@
 	
 	do {
 	
-		let data = try NSURLConnection.sendSynchronousRequest(request, returnResponse: &response)
+		let data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
 		print(response)
 	
 	} catch {
@@ -40,8 +40,7 @@
 		
 		func addItem(item: Item) throws { // 使用 throws 表示這個 method 可以丟出錯誤
 			guard items.count < 5 else {
-				thorw ShoppingCartError.cartIsFull
-				return
+				throw ShoppingCartError.cartIsFull
 			}
 			items.append(item)
 		}

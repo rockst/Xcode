@@ -37,7 +37,9 @@
 > 處理 nil
 
 	if code != nil {
-		let message = text + code
+	    let message = text + code!
+	} else {
+	    print("nil")
 	}
 
 > 使用 ! 來 unwrap Optional, 但要確保包含一個值
@@ -100,7 +102,7 @@
 > 使用 ?. 鏈結起來
 
 	if let price = findStockCode("Apple")?.price {
-		let cost = stock.price * 100
+		let cost = price * 100
 		print(cost)
 	}
 	

@@ -7,7 +7,7 @@
 		// 需要預設值
 		var name: String = ""
 		var age: Int = 18
-		var others: String[] = ["game", "art"]
+		var others: [String] = ["game", "art"]
 		
 		// 使用 ? 表示是可選擇性的值 Optional , 其 tel = nil
 		var tel: String?
@@ -38,15 +38,15 @@
 
 > 實作
 	
-	Item(price: 100, name: "p1")
+	let ItemObject = Item(price: 100, name: "p1")
 	
 ## 建立類別實體 Class Instance
 
 	var StudentItem = Student()
 	
-	Student.name = "rock"
-	Student.age = 40
-	Student.others = ["game", "movie", "food"]
+	StudentItem.name = "rock"
+	StudentItem.age = 40
+	StudentItem.others = ["game", "movie", "food"]
 	
 ## Extends 繼承與採用
 
@@ -82,7 +82,7 @@
 	class Student {
 		func getScore(name:String) -> Int {
 			print("name = \(name)")
-			reutrn 10
+			return 10
 		}
 	}
 	
@@ -114,7 +114,7 @@
 		// Contructer
 		init(roomCount: Int = 10, roomPrice: Int = 100) {
 			self.roomCount = roomCount
-			selfroomPrice = roomPrice
+			self.roomPrice = roomPrice
 		}
 	
 	}
@@ -132,7 +132,7 @@
 
 
 	class Hotel {
-		var roomPrice: Int {
+		var roomPrice: Int = 0 {
 			didSet {
 				if roomPrice > 1000 {
 					roomPrice = 1000
