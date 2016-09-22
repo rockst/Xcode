@@ -6,3 +6,4 @@
 * [A.4-Class : 類別](A.4-Class.md)
 * [A.5-Control Flow : 流程控制](A.5-ControlFlow.md)
 * [A.6-Tuples : Tuples](A.6-Tuples.md)
+* [A.7-Optional : Optional](A.7-Optional.md)
