@@ -8,3 +8,5 @@
 * [A.6-Tuples : Tuples](A.6-Tuples.md)
 * [A.7-Optional : Optional](A.7-Optional.md)
 * [A.8-Generics : 泛型](A.8-Generics.md)
+* [A.9-Exception : 例外處理](A.9-Exception.md)
+* [A.10-AvailabilityCheck : 可行性檢查](A.10-AvailabilityCheck.md)

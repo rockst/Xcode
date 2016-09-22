@@ -14,6 +14,32 @@
 	
 	}
 	
+## enum 列舉
+
+> 定義
+
+	enum ShoppingCartError: ErrorType {
+		case cartIsFull
+		case cartIsEmpty
+	}
+	
+> 實作
+	
+	ShoppingCartError.cartIsFull
+
+## struct
+
+> 定義
+
+	struct Item {
+		var price:Double
+		var name:String
+	}
+
+> 實作
+	
+	Item(price: 100, name: "p1")
+	
 ## 建立類別實體 Class Instance
 
 	var StudentItem = Student()
@@ -64,5 +90,62 @@
 	var score = StudentItem.getScore("Rock")
 	print(score)
 	
+## 計算屬性 Computed Properties
 
+	class Hotel {
+	
+		var roomCount:Int
+		var roomPrice:Int
+		
+		var totalPrice:Int {
+		
+			// getter
+			get {
+				return roomCount * roomPrice
+			}
+			
+			// setter
+			set {
+				let newRoomPrice = Int(newValue / roomCount)
+				roomPrice = newRoomPrice
+			}
+		}
+		
+		// Contructer
+		init(roomCount: Int = 10, roomPrice: Int = 100) {
+			self.roomCount = roomCount
+			selfroomPrice = roomPrice
+		}
+	
+	}
+	
+	let HotelItem = Hotel(roomCount: 1, roomPrice: 100)
+	print(HotelItem.totalPrice)
+	
+## 屬性觀察者 Property Observers
+
+> 針對屬性值的變更做反應
+
+> willSet : 值被儲存之前呼叫
+
+> didSet: 值被儲存之後呼叫
+
+
+	class Hotel {
+		var roomPrice: Int {
+			didSet {
+				if roomPrice > 1000 {
+					roomPrice = 1000
+				}
+			}
+		}
+	}
+	
+## 可失敗轉型 Failable Casts
+
+> 使用 as! 來強迫轉型
+
+	let cel = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+
+> 使用 as? 可以判斷是否轉型成功, 失敗回傳 nil
 	
