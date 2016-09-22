@@ -96,9 +96,16 @@
 	}
 	
 > 使用 Optional Chaining
+
 > 使用 ?. 鏈結起來
 
 	if let price = findStockCode("Apple")?.price {
 		let cost = stock.price * 100
 		print(cost)
+	}
+	
+## 可失敗化初始器 Failable Initializers
+
+	if let myFont = UIFont(name : "Somefont", size: 22.0) {
+		// 初始化失敗後要處理的程序
 	}
